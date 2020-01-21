@@ -45,9 +45,9 @@ describe('validator module performs basic validation of', () => {
 
 describe('validator module performs complex validations', () => {
 
-  it('validates the presence of required object properties at any level', () => {
-    // i.e. does person.hair.color exist and have a good value, not just person.hair
-    expect(true).toBeFalsy();
+  it('dose isObject an object?', () => {
+    const susan = {};
+    expect(validator.isObject(susan)).toBeFalsy();
   });
 
   it('validates the proper types of object properties', () => {
