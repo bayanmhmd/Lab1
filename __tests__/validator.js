@@ -22,7 +22,19 @@ describe('validator module performs basic validation of', () => {
   });
 
   it('numbers', () => {
-    expect(true).toBeFalsy();
+    let str = 'yes';
+    let num = 1;
+    let arr = ['a'];
+    let obj = {x:'y'};
+    let func = () => {};
+    let bool = false;
+    expect(validator.isNumber(str)).toBeFalsy();
+    expect(validator.isNumber(num)).toBeTruthy();
+    expect(validator.isNumber(arr)).toBeFalsy();
+    expect(validator.isNumber(obj)).toBeFalsy();
+    expect(validator.isNumber(func)).toBeFalsy();
+    expect(validator.isNumber(bool)).toBeFalsy();
+  
   });
 
   it('arrays', () => {
