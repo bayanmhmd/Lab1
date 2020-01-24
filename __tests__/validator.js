@@ -38,19 +38,39 @@ describe('validator module performs basic validation of', () => {
   });
 
   it('arrays', () => {
-    expect(true).toBeFalsy();
+    let str = 'yes';
+    let num = 1;
+    let arr = ['a'];
+    let obj = {x:'y'};
+    let func = () => {};
+    let bool = false;
+    expect(validator.isArray(str)).toBeFalsy();
+    expect(validator.isArray(num)).toBeFalsy();
+    expect(validator.isArray(arr)).toBeTruthy();
+    expect(validator.isArray(obj)).toBeFalsy();
+    expect(validator.isArray(func)).toBeFalsy();
+    expect(validator.isArray(bool)).toBeFalsy();
+  
+    
   });
 
   it('objects', () => {
-    expect(true).toBeFalsy();
+    
+    let obj = {x:'y'};
+    
+    expect(validator.isObject(obj)).toBeTruthy();
+    
   });
+    
+    
 
   it('booleans', () => {
     expect(true).toBeFalsy();
   });
 
   it('functions', () => {
-    expect(true).toBeFalsy();
+    let func = () => {};
+    expect(validator.isFunction(func)).toBeTruthy();
   });
 
 });
